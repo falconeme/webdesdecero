@@ -1,0 +1,423 @@
+/* Estilos para el encabezado */
+#encabezado-fijo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  #encabezado {
+    background-color: #333333c7; /* Gris oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Estilos para el botón del menú */
+  .checkbtn {
+    font-size: 30px;
+    color: white; /* Texto blanco */
+    float: right;
+    line-height: 80px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex; /* Usamos flexbox para alinear los elementos */
+    height: 35px; /* Altura del menú */
+  }
+  
+  .menu li {
+    float: none; /* Quitamos la propiedad float */
+  }
+  
+  .menu li a {
+    display: block;
+    padding: 0 15px; /* Espaciado interno horizontal */
+    line-height: 50px; /* Centrar verticalmente */
+    text-decoration: none;
+    color: #fff; /* Texto blanco */
+    font-family: 'Arial', sans-serif; /* Cambiar la fuente */
+    font-size: 16px; /* Tamaño de la fuente */
+    transition: color 0.3s ease; /* Agrega una transición suave al color */
+  }
+  
+  .menu li a:hover {
+    color: #007bff; /* Azul eléctrico */
+  }
+
+  /* Consulta de medios para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .contenedor {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Estilos adicionales para dispositivos móviles */
+@media screen and (max-width: 480px) {
+    .contenedor {
+        grid-template-columns: 1fr;
+    }
+}
+
+  /* Estilos para dispositivos móviles */
+  @media screen and (max-width: 768px) {
+    .menu {
+        display: none; 
+        position: fixed; 
+        top: 17%;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        background-color: rgba(0, 0, 0, 0.8); 
+        z-index: 1;
+    }
+
+    .fuente-acento {
+        margin-right: 200px; /* Elimina el margen para dispositivos móviles */
+    }
+
+    .menu.active {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: baseline;
+        align-items: center;
+    }
+    .menu li {
+        margin: 20px 0; 
+        text-align: center;
+    }
+    .checkbtn {
+        display: block; 
+        margin-right: 10px; /* Agrega un pequeño margen para separarlo del borde */
+    } 
+    }
+  
+  body {
+    margin-top: 150px;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  #presentacion, .trabajos {
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+  }
+
+  .contenedor {
+    background-image: url('img/fondo\ principal.jpg');
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* Estilos para los elementos individuales dentro del contenedor */
+.elemento {
+    width: 100%;
+}
+
+  #imagen {
+    background-size: cover;
+    background-position: center;
+    padding: 35px;
+    border-radius: 10px; /* Añadimos bordes redondeados al contenedor */
+    overflow: hidden; /* Oculta cualquier contenido que se extienda más allá del contenedor */
+  }
+  
+  #imagen img {
+    display: block; /* Para centrar la imagen horizontalmente */
+    margin: 0 auto; /* Para centrar la imagen horizontalmente */
+    transition: transform 0.3s ease; /* Agrega una transición suave al efecto de zoom */
+  }
+  
+  #imagen:hover img {
+    transform: scale(1.1); /* Hace un ligero zoom (10% más grande) al pasar el mouse por encima */
+  }
+
+  #informacion {
+    text-align: center; /* Centra el contenido horizontalmente */
+    color: #fff; /* Texto blanco para contrastar con el fondo */
+    margin-top: 50px;
+  }
+  
+  #informacion p {
+    font-size: 18px; /* Tamaño de fuente para el párrafo */
+    margin-bottom: 10px; /* Espacio inferior entre el párrafo y los iconos de redes sociales */
+  }
+  
+  .redes-sociales a {
+    color: #fff; /* Color de los iconos de redes sociales */
+    text-decoration: none; /* Quita la subrayado del enlace */
+    margin: 0 10px; /* Espacio horizontal entre los iconos */
+    font-size: 24px; /* Tamaño de fuente de los iconos */
+    transition: color 0.3s ease; /* Agrega una transición suave al color */
+  }
+  
+  .redes-sociales a:hover {
+    color: rgb(53, 53, 239); /* Cambia el color de los iconos al pasar el mouse por encima */
+  }
+
+  #linea-de-tiempo {
+    position: relative;
+    margin-top: 30px;
+}
+
+.evento {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.evento::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.evento::after {
+    content: attr(style);
+    position: absolute;
+    top: calc(50% + 10px);
+    left: -50%;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.contenido {
+    margin-left: 20px;
+}
+
+.contenido h3 {
+    margin-top: 0;
+}
+
+/* Estilos adicionales según sea necesario */ 
+  #presentacion {
+    text-align: left; /* Centra el contenido horizontalmente */
+    padding: 30px 20px; /* Añade espacio alrededor del contenido */
+    color: #000000; /* Color de texto oscuro para un buen contraste */
+    font-family: 'Roboto', sans-serif; /* Fuente para todo el texto */
+  }
+  
+  #presentacion h2 {
+    font-size: 30px; /* Tamaño grande para el título */
+    font-weight: bold; /* Texto en negrita */
+    margin-bottom: 20px; /* Espacio inferior al título */
+    color: rgb(127, 125, 125); /* Color azul llamativo para el título */
+  }
+  
+  #presentacion p {
+    font-size: 16px; /* Tamaño de fuente para el texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin-bottom: 30px; /* Espacio inferior al párrafo */
+  }
+  
+  #presentacion .ubicacion {
+    font-style: italic; /* Texto en cursiva para la ubicación */
+  }
+  
+  #formacion {
+    padding: 20px; /* Añade espacio alrededor del contenido */
+    color: #000000; /* Color de texto oscuro para un buen contraste */
+  }
+  
+  #formacion h2 {
+    font-size: 24px; /* Tamaño grande para el título */
+    font-weight: bold; /* Texto en negrita */
+    margin-bottom: 20px; /* Espacio inferior al título */
+    color: #003399; /* Color azul para el título */
+  }
+  
+  #formacion .educacion {
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0; /* Elimina el espacio interior de la lista */
+  }
+  
+  #formacion .formacion {
+    margin-bottom: 30px; /* Espacio inferior entre los elementos de la lista */
+  }
+  
+  #formacion .formacion h3 {
+    font-size: 20px; /* Tamaño grande para los títulos de la lista */
+    margin-bottom: 10px; /* Espacio inferior al título de la lista */
+    color: #003399; /* Color azul para los títulos de la lista */
+  }
+  
+  #formacion .contenido-formacion {
+    display: flex; /* Usa un diseño flexible para alinear el contenido */
+    justify-content: space-between; /* Distribuye uniformemente el contenido */
+  }
+
+  #formacion .informacion {
+    flex: 1; /* Ocupa el espacio disponible */
+  }
+  
+  #formacion .progreso {
+    flex: 0 0 30%; /* Define un ancho fijo para la barra de progreso */
+  }
+  
+  #formacion .barra {
+    height: 10px; /* Altura de la barra de progreso */
+    background-color: #003399; /* Color azul para la barra de progreso */
+    border-radius: 5px; /* Borde redondeado para la barra de progreso */
+    width: 0; /* Ancho inicial de la barra de progreso */
+    transition: width 0.7s; /* Agrega una transición suave a la anchura */
+  }
+
+  .formacion:nth-child(even) {
+    background-color: #f9f9f9; /* Fondo claro para los elementos pares */
+}
+
+.formacion:nth-child(odd) {
+    background-color: #ffffff; /* Fondo blanco para los elementos impares */
+}
+.formacion {
+    border: 1px solid #e0e0e0; /* Borde sólido para cada elemento */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombreado suave alrededor de cada elemento */
+    position: relative; /* Establece la posición relativa para poder posicionar el pseudo-elemento */
+    padding-bottom: 20px; /* Agrega espacio en la parte inferior para la línea */
+}
+
+.formacion::before {
+    content: ''; /* Contenido del pseudo-elemento */
+    position: absolute; /* Posición absoluta para que la línea no afecte al flujo del contenido */
+    left: -16px; /* Ajusta la posición de la línea a la izquierda del elemento */
+    top: 40%; /* Centra verticalmente la línea */
+    width: 10px; /* Ancho de la línea */
+    height: calc(100% - 20px); /* Altura de la línea */
+    border-left: 2px solid #ccc; /* Estilo de la línea */
+}
+
+  /* Estilos para la sección de trabajos */
+.trabajos {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Estilos para la sección de trabajos */
+.trabajos {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Estilos para las tarjetas de trabajo */
+.tarjeta-trabajo {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+    width: 400px; /* Ancho de la tarjeta */
+    display: inline-block; /* Para que las tarjetas se muestren en línea */
+}
+
+.tarjeta-trabajo:hover {
+    transform: translateY(-5px); /* Eleva ligeramente la tarjeta al pasar el mouse por encima */
+}
+
+.contenido {
+    padding: 10px; /* Ajusta el espacio interno de la tarjeta */
+}
+
+.tarjeta-trabajo img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd; /* Agrega una línea divisoria debajo de la imagen */
+}
+
+.tarjeta-trabajo h4 {
+    margin: 10px 0;
+    font-size: 18px; /* Reduce el tamaño del título */
+}
+
+.tarjeta-trabajo p {
+    margin: 0 0 10px;
+    font-size: 14px; /* Reduce el tamaño del texto */
+    color: #666;
+}
+
+.leer-mas {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 14px; /* Reduce el tamaño del texto del botón */
+}
+
+.leer-mas:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse por encima */
+}
+
+/* Estilos para el footer */
+#contactos {
+    background-color: #333; /* Color de fondo del footer */
+    color: #fff; /* Color de texto del footer */
+    padding: 20px; /* Espacio interno del footer */
+    text-align: center; /* Centra el contenido horizontalmente */
+}
+
+#contactos h3 {
+    margin-bottom: 10px; /* Espacio inferior del título */
+}
+
+.redes-sociales {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0;
+}
+
+.redes-sociales li {
+    display: inline-block; /* Muestra los íconos en línea */
+    margin: 0 10px; /* Espacio entre los íconos */
+}
+
+.redes-sociales a {
+    color: #fff; /* Color de los íconos */
+    font-size: 20px; /* Tamaño de los íconos */
+    text-decoration: none; /* Elimina el subrayado de los íconos */
+    transition: color 0.3s ease; /* Agrega una transición suave al color */
+}
+
+.redes-sociales a:hover {
+    color: #007bff; /* Cambia el color al pasar el mouse por encima */
+}
